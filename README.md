@@ -1,16 +1,70 @@
-# React + Vite
+# ShopEasy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShopEasy is a premium e-commerce storefront built with React, Vite, Tailwind CSS, and Framer Motion. It demonstrates a polished shopping experience with product filtering, cart management, wishlist support, animated interface elements, and responsive design.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive React application powered by Vite.
+- Product search, category filter, and sort functionality.
+- Cart and wishlist management with dynamic quantity controls.
+- Order confirmation modal and toast notifications.
+- Animated interaction using Framer Motion.
+- Light/Dark theme support and smooth page transitions.
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Toastify
+- React Icons
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/App.jsx` – Application state, routing, and global event handlers.
+- `src/components/Navbar.jsx` – Navigation header with cart and wishlist counters.
+- `src/components/Hero.jsx` – Landing hero section with featured items and call-to-action.
+- `src/components/ProductCard.jsx` – Individual product cards with add-to-cart and wishlist actions.
+- `src/data/products.js` – Product catalog data used by the storefront.
+- `tailwind.config.js` – Tailwind CSS configuration.
+
+## Installation
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm run dev
+```
+
+3. Open the local URL shown in the terminal to view the app.
+
+## Production Build
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Notes
+
+- The application is designed for demonstration and user interface refinement.
+- Styles are provided through Tailwind CSS utilities and custom theme extensions.
+- The experience is optimized for desktop and mobile viewports.
+
+## Contribution
+
+If you wish to extend the project, focus on modular component design, state management improvements, and accessibility refinements.
