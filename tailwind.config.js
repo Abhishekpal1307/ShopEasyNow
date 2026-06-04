@@ -3,8 +3,13 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
       boxShadow: {
         soft: '0 25px 80px rgba(15, 23, 42, 0.08)',
+        glow: '0 0 20px rgba(212, 163, 115, 0.3)',
       },
       colors: {
         primary: {
@@ -14,9 +19,15 @@ export default {
           600: '#4f46e5',
           700: '#4338ca',
         },
+        accent: {
+          gold: '#d4a373',
+          'gold-light': '#e9c46a',
+          'gold-dark': '#c99a6a',
+        },
       },
       backgroundImage: {
         'hero-glow': 'radial-gradient(circle at top left, rgba(99, 102, 241, 0.35), transparent 28%), radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.17), transparent 30%)',
+        'premium-gradient': 'linear-gradient(135deg, #d4a373 0%, #e9c46a 100%)',
       },
     },
   },

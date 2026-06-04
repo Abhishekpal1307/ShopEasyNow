@@ -21,6 +21,7 @@ function AppContent() {
   const [loading, setLoading] = useState(true)
   const [theme, setTheme] = useState('light')
   const [orderProduct, setOrderProduct] = useState(null)
+  const [pendingScrollToProducts, setPendingScrollToProducts] = useState(false)
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('shopEasyTheme')
@@ -122,11 +123,28 @@ function AppContent() {
   }
 
   const handlePageChange = (nextPage) => {
+    if (nextPage === 'Products') {
+      if (page === 'Home') {
+        scrollToProducts()
+        return
+      }
+      setPage('Home')
+      setPendingScrollToProducts(true)
+      return
+    }
+
     setPage(nextPage)
     if (nextPage === 'Home') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
+
+  useEffect(() => {
+    if (pendingScrollToProducts && page === 'Home') {
+      scrollToProducts()
+      setPendingScrollToProducts(false)
+    }
+  }, [page, pendingScrollToProducts])
 
   const pageProps = {
     products: filteredProducts,
@@ -149,7 +167,7 @@ function AppContent() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <div className="relative min-h-screen overflow-x-hidden text-slate-900 dark:text-slate-100" style={{ background: page === 'Home' ? '#FFEAEC' : 'rgb(241 245 250)', }}>
       <Navbar
         activePage={page}
         onNavigate={handlePageChange}
